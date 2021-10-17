@@ -49,7 +49,13 @@ jobs:
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v0
 
-      - name: Run all tests
+      - name: Generate graph
         uses: matlab-actions/run-command@v0
         with:
           command: addpath('code'); dummy_plot()
+
+      - name: Archive graph
+        uses: actions/upload-artifact@v2
+        with:
+          name: Dummy-plot
+          path: barchart.png
