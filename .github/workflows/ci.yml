@@ -52,7 +52,7 @@ jobs:
       - name: Generate graph
         uses: matlab-actions/run-command@v0
         with:
-          command: addpath('code'); dummy_plot()
+          command: addpath('code'); dummy_plot(); copyfile('barchart.png','docs');
 
       - name: Archive graph
         uses: actions/upload-artifact@v2
